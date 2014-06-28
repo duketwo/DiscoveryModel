@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12972130-FC02-4D7B-8E8B-08FDC9EC9D48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DiscoveryModel</RootNamespace>
+    <AssemblyName>DiscoveryModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <TargetFrameworkProfile />
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>PdbOnly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EasyHook">
+      <HintPath>..\Injector\bin\Debug\EasyHook.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CategoryIds.cs" />
+    <Compile Include="D3DDetour\D3D11.cs" />
+    <Compile Include="D3DDetour\D3D9.cs" />
+    <Compile Include="D3DDetour\D3DHook.cs" />
+    <Compile Include="D3DDetour\Example.cs" />
+    <Compile Include="D3DDetour\Pulse.cs" />
+    <Compile Include="EveActiveShip.cs" />
+    <Compile Include="EveAgent.cs" />
+    <Compile Include="EveAgentBookmark.cs" />
+    <Compile Include="EveAgentDialogWindow.cs" />
+    <Compile Include="EveAgentMission.cs" />
+    <Compile Include="EveBookmark.cs" />
+    <Compile Include="EveCharacter.cs" />
+    <Compile Include="EveCharacterCreation.cs" />
+    <Compile Include="EveChatWindow.cs" />
+    <Compile Include="EveClient.cs" />
+    <Compile Include="EveCommands.cs" />
+    <Compile Include="EveEntity.cs" />
+    <Compile Include="EveInventoryContainer.cs" />
+    <Compile Include="EveInventoryWindow.cs" />
+    <Compile Include="EveInvType.cs" />
+    <Compile Include="EveItem.cs" />
+    <Compile Include="EveLogin.cs" />
+    <Compile Include="EveLoginSlot.cs" />
+    <Compile Include="EveMarketActionWindow.cs" />
+    <Compile Include="EveMarketWindow.cs" />
+    <Compile Include="EveMe.cs" />
+    <Compile Include="EveModule.cs" />
+    <Compile Include="EveObject.cs" />
+    <Compile Include="EveOrder.cs" />
+    <Compile Include="EveOwner.cs" />
+    <Compile Include="EvePriceHistory.cs">
+      <DependentUpon>EveOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EveScanResult.cs" />
+    <Compile Include="EveSession.cs" />
+    <Compile Include="EveSkill.cs" />
+    <Compile Include="EveSkills.cs" />
+    <Compile Include="EveWindow.cs" />
+    <Compile Include="FlagIds.cs" />
+    <Compile Include="Frame.cs" />
+    <Compile Include="GroupIds.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PyCall.cs" />
+    <Compile Include="PyType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="D3DDetour" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
